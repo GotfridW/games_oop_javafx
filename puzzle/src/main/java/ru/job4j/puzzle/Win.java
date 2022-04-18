@@ -5,7 +5,7 @@ public class Win {
         boolean rsl = false;
         for (int index = 0; index < board.length; index++) {
             if (board[index][index] == 1
-                    && Win.checkRow(board, index) || Win.checkColumn(board, index)) {
+                    && (Win.checkRow(board, index) || Win.checkColumn(board, index))) {
                 rsl = true;
                 break;
             }
@@ -26,8 +26,8 @@ public class Win {
 
     public static boolean checkColumn(int[][] board, int column) {
         boolean rsl = true;
-        for (int[] index : board) {
-            if (index[column] != 1) {
+        for (int index = 0; index < board.length; index++) {
+            if (board[index][column] != 1) {
                 rsl = false;
                 break;
             }
